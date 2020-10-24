@@ -18,11 +18,13 @@ node* insert(node* root, int value);
 void inOrder(node* root);
 
 int sorted = 0;
-int n = 1e5;
 int* a;
 
-int main() {
-    
+int main(int argc, char *argv[]) {
+    if(argc != 2)
+        return 0;
+
+    int n = atoi(argv[1]);
     a = malloc(sizeof(int) * n);
 
     int value, i;
