@@ -13,3 +13,6 @@
 |ABBSort.c|startabb.sh|abb-testing/|all passed|
 |ShellSort.c|startshell.bat|shell-testing/|all passed|
 
+## Atention
+
+tiempo.c and tiempo.h is the same for all codes.
