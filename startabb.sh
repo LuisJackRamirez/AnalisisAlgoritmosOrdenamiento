@@ -7,7 +7,6 @@ echo "testing abb sort..."
 ./abb 100000 < nums.txt
 ./abb 200000 < nums.txt
 ./abb 400000 < nums.txt
-./abb 500000 < nums.txt
 ./abb 600000 < nums.txt
 ./abb 800000 < nums.txt
 ./abb 1000000 < nums.txt

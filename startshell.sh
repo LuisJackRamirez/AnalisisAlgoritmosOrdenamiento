@@ -7,7 +7,6 @@ echo "Testing Shell Sort..."
 ./shell 100000 < nums.txt
 ./shell 200000 < nums.txt
 ./shell 400000 < nums.txt
-./shell 500000 < nums.txt
 ./shell 600000 < nums.txt
 ./shell 800000 < nums.txt
 ./shell 1000000 < nums.txt
