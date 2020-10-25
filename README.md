@@ -18,7 +18,7 @@ tiempo.c and tiempo.h is the same for all codes.
 |BubbleSort.c|❌|
 |Optimized BubbleSort.c|❌|
 
-## Tested over all n's
+## Tested over all n's 
 
 |code|script|directory|tests|status|
 |---|---|---|---|---|
@@ -41,14 +41,14 @@ tiempo.c and tiempo.h is the same for all codes.
 |Bubble Sort|❌|❌|❌|❌|
 |Optimized Bubble Sort|❌|❌|❌|❌|
 
-# Comparative Table (Step 3)
+## Comparative Table (step 3)
 TODO: Se necesitan los valores de tiempo real, tiempo CPU, E/S y CPU/Wall de cada algoritmo para hacer la tabla
 |Status|
 |---|
 |❌|
 
 
-## Generated graphics with all algorithms
+## Generated graphics with all algorithms (steps 5, 8)
 
 TODO: Se necesitan los valores de tiempo real, tiempo CPU, E/S y CPU/Wall de cada algoritmo para hacer las graficas grupales
 |Step|Finish|
