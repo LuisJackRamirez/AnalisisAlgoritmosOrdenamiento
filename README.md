@@ -11,7 +11,7 @@
 |code|script|directory|test|
 |---|---|---|---|
 |ABBSort.c|startabb.sh|abb-testing/|all passed|
-|ShellSort.c|startshell.bat|shell-testing/|all passed|
+|ShellSort.c|startshell.sh|shell-testing/|all passed|
 
 ## Atention
 

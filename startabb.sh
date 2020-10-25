@@ -24,6 +24,9 @@ echo "test 200000..."
 echo "test 400000..."
 ./abb 400000 < nums.txt > abb-testing/abb-test400000.txt
 
+echo "test 500000..."
+./abb 500000 < nums.txt > abb-testing/abb-test500000.txt
+
 echo "test 600000..."
 ./abb 600000 < nums.txt > abb-testing/abb-test600000.txt
 
