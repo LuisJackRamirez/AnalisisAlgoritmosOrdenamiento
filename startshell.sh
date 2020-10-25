@@ -24,6 +24,9 @@ echo "test 200000..."
 echo "test 400000..."
 ./shell 400000 < nums.txt > shell-testing/shell-test400000.txt
 
+echo "test 500000..."
+./shell 500000 < nums.txt > shell-testing/shell-test500000.txt
+
 echo "test 600000..."
 ./shell 600000 < nums.txt > shell-testing/shell-test600000.txt
 
