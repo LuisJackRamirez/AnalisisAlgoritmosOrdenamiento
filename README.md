@@ -15,8 +15,8 @@ tiempo.c and tiempo.h is the same for all codes.
 |InsertionSort.c|✔️|
 |SelectionSort.c|✔️|
 |ShellSort.c|✔️|
-|BubbleSort.c|❌|
-|Optimized BubbleSort.c|❌|
+|BubbleSort.c|✔️|
+|Optimized BubbleSort.c|✔️|
 
 ## Tested over all n's 
 
