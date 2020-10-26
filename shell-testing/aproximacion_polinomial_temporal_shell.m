@@ -23,9 +23,14 @@ y3=polyval(p3,xi);
 y4=polyval(p4,xi);
 y8=polyval(p8,xi);%%EVALUACION DEL POLINOMIO P EN EL ESPACIO Xi
 
-plot(x, real, 'o', x, cpu, 'o', x, es, 'ok'), grid;
+bt = [0.2286939621 0.2283450000;];
+c = categorical({'Tiempo real', 'Tiempo CPU'});
+format long;
+bar(c,bt, .4);
+
+%%plot(x, real, 'o', x, cpu, 'o', x, es, 'ok'), grid;
 %%plot(x,y,'o',xi,y1,'-',xi,y2,'-',xi,y3,'-',xi,y4,'-',xi,y8,'-'),grid;
 %%plot(x,y,'o',xi,y1,'-'),grid;
 ylabel('Tiempo (segundos)');
 xlabel('Tamaño del problema (n)');
-title('Comportamiento temporal del algoritmo Shell Sort');
+title('Comparativa temporal real vs cpu Shell Sort');
