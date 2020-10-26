@@ -34,8 +34,8 @@ tiempo.c and tiempo.h is the same for all codes.
 
 |Algorithm|Step 3|Step 4|Step 6|Step 7|
 |---|---|---|---|---|
-|ABB Sort|❌|⏰|✔️|✔️|
-|Shell Sort|❌|⏰|✔️|✔️|
+|ABB Sort|❌|✔️|✔️|✔️|
+|Shell Sort|❌|✔️|✔️|✔️|
 |Insertion Sort|❌|❌|❌|❌|
 |Selection Sort|❌|❌|❌|❌|
 |Bubble Sort|❌|❌|❌|❌|
