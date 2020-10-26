@@ -34,8 +34,8 @@ tiempo.c and tiempo.h is the same for all codes.
 
 |Algorithm|Step 3|Step 4|Step 6|Step 7|
 |---|---|---|---|---|
-|ABB Sort|❌|⏰|✔️|✔️|
-|Shell Sort|❌|⏰|✔️|✔️|
+|ABB Sort|✔️|✔️|✔️|✔️|
+|Shell Sort|✔️|✔️|✔️|✔️|
 |Insertion Sort|❌|❌|❌|❌|
 |Selection Sort|❌|❌|❌|❌|
 |Bubble Sort|❌|❌|❌|❌|
@@ -60,8 +60,8 @@ TODO: Se necesitan los valores de tiempo real, tiempo CPU, E/S y CPU/Wall de cad
 
 |Algorithm|15000000|20000000|500000000|1000000000|5000000000
 |---|---|---|---|---|---|
-|ABB Sort|❌|❌|❌|❌|❌|
-|Shell Sort|❌|❌|❌|❌|❌|
+|ABB Sort|✔️|✔️|✔️|✔️|✔️|
+|Shell Sort|✔️|✔️|✔️|✔️|✔️|
 |Insertion Sort|❌|❌|❌|❌|❌|
 |Selection Sort|❌|❌|❌|❌|❌|
 |Bubble Sort|❌|❌|❌|❌|❌|
