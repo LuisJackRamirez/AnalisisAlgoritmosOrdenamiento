@@ -1,7 +1,24 @@
+/*
+    Titulo: Ordenamiento con Árbol binario de búsqueda
+    Descripción: Implemntación de un árbol binario de búsqueda con rotaciones, su
+    recorrido inOrder para devolver los elementos ordenados.
+    Fecha: 26/10/2020
+    Version: 1.6.1
+    Autor: Luis Fernando Reséndiz Chávez
+*/
+
+/*********************************************************/
+        BIBLIOTECAS UTILIZADAS
+/*********************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "tiempo.h"
+
+/*********************************************************/
+        ESTRUCTURA DEL ÁRBOL BINARIO DE BÚSQUEDA
+/*********************************************************/
 
 typedef struct node {
     int value;
@@ -9,6 +26,10 @@ typedef struct node {
     struct node* right;
     int height;
 } node;
+
+/*********************************************************/
+        PROTOTIPOS DE FUNCIONES
+/*********************************************************/
 
 int max(int a, int b);
 int height(node *root);
@@ -19,8 +40,16 @@ node* leftRotation(node* root);
 node* insert(node* root, int value);
 void inOrder(node* root);
 
+/*********************************************************/
+        VARIABLES GLOBALES
+/*********************************************************/
+
 int sorted = 0;
 int* a;
+
+/*********************************************************/
+        FUNCIÓN PRINCIPAL DEL PROGRAMA
+/*********************************************************/
 
 int main(int argc, char *argv[]) {
     if(argc != 2)
@@ -34,7 +63,7 @@ int main(int argc, char *argv[]) {
     int value, i;
     node* ABBSort = NULL;
 
-    // algorithm begin
+    // Incio del algoritmo, comenzamos a contar el tiempo
     uswtime(&utime0, &stime0, &wtime0);
 
     for(i = 0; i < n; ++i) {
@@ -44,8 +73,9 @@ int main(int argc, char *argv[]) {
 
     inOrder(ABBSort);
 
-    // algorithm end
+    // Fin del algoritmo, dejamos de medir el tiempo
     uswtime(&utime1, &stime1, &wtime1);
+
     //Cálculo del tiempo de ejecución del programa
     printf("real (Tiempo total)  %.10f s\n",  wtime1 - wtime0);
 	printf("user (Tiempo de procesamiento en CPU) %.10f s\n",  utime1 - utime0);
@@ -56,14 +86,24 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+/*********************************************************/
+        IMPLEMENTACIÓN DE FUNCIONES
+/*********************************************************/
+
+// max(int, int) -> int
+// Recibe dos numeros enteros y devuelve el mayor de ellos.
 int max(int a, int b) {
     return (a > b) ? a : b;
 }
 
+// height(node*) -> int
+// Recibe una apuntador a una estructura nodo y devuelve su altura respecto al árbol.
 int height(node *root) {
     return (root == NULL) ? 0 : root -> height;
 }
 
+// createNode(int) -> node*
+// Recive un número entero y devuleve un apuntador a una estrcutura nodo con dicho valor.
 node* createNode(int value) {
     node* root =(node*) malloc(sizeof(node));
 
@@ -75,6 +115,8 @@ node* createNode(int value) {
     return root;
 }
 
+// rightRotation(node*) -> node*
+// Recibe un apuntador a una estructura nodo, rota su subarbol a la derecha para balancearlo y retorna la nueva raiz
 node* rightRotation(node* root) {
     node* next = root -> left;
     node* temp = next -> right;
@@ -88,6 +130,8 @@ node* rightRotation(node* root) {
     return next;
 }
 
+// leftRotation(node*) -> node*
+// Recibe un apuntador a una estructura nodo, rota su subarbol a la izquierda para balancearlo y retorna la nueva raiz
 node* leftRotation(node* root) {
     node* next = root -> right;
     node* temp = next -> left;
@@ -101,10 +145,17 @@ node* leftRotation(node* root) {
     return next;
 }
 
+// getbalance(node*) -> int
+// Recibe un apuntador a una estructura nodo y devuelve du factor de balance, sirve para
+// ver hacia que lado queda balanceado el árbol
 int getBalance(node* root) {
     return (root == NULL) ? 0 : height(root -> left) - height(root -> right);
 }
 
+// insert(node*, int) -> node*
+// Recibe un apuntador a una estructura nodo que representa la raiz del arbol, tambien
+// recibe un número entero y lo inserta en el árbol creando un nuevo nodo, devuelve el árbol
+// con el nuevo numero insertado.
 node* insert(node* root, int value) {
     if(root == NULL) {
         return createNode(value);
@@ -143,6 +194,9 @@ node* insert(node* root, int value) {
     return root;
 }
 
+// inOrder(root*) -> void
+// Realiza el recorrido inOrder (hijo izquierdo, raiz, hijo derecho) de un árbol binario.
+// Almacena los valores ya ordenados de cada nodo en el arreglo incial (variable global).
 void inOrder(node* root) {
     if(root != NULL) {
         inOrder(root -> left);
