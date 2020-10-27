@@ -42,7 +42,7 @@ tiempo.c and tiempo.h is the same for all codes.
 |Optimized Bubble Sort|❌|❌|❌|❌|
 
 ## Comparative Table (step 3)
-TODO: Se necesitan los valores de tiempo real, tiempo CPU, E/S y CPU/Wall de cada algoritmo para hacer la tabla
+TODO: Se necesitan los valores de tiempo real, tiempo CPU, E/S y CPU/Wall de cada algoritmo para hacer la tabla (https://www.calculatorsoup.com/calculators/time/decimal-to-time-calculator.php)
 
 With n = 500,000:
 |Algorithm|Real time|CPU time|I/O time|% CPU/Wall|
