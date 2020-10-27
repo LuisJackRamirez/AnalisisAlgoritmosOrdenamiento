@@ -50,7 +50,7 @@ With n = 500,000:
 |ABB Sort|❌|❌|❌|❌|
 |Shell Sort|❌|❌|❌|❌|
 |Insertion Sort|7'16''|6'51''|3''|94.991 %|
-|Selection Sort|❌|❌|❌|❌|
+|Selection Sort|13'2''|12'7''|5''|93.612 %|
 |Bubble Sort|❌|❌|❌|❌|
 |Optimized Bubble Sort|❌|❌|❌|❌|
 
