@@ -24,8 +24,8 @@ tiempo.c and tiempo.h is the same for all codes.
 |---|---|---|---|---|
 |ABBSort.c|startabb.sh|abb-testing/|all passed|✔️|
 |ShellSort.c|startshell.sh|shell-testing/|all passed|✔️|
-|ABBSort.c|-|-|-|❌|
-|ShellSort.c|-|-|-|❌|
+|selectionSort.c|startsel.sh|sel-testing/|all passed|✔️|
+|insertionSort.c|startins.sh|ins-testing/|all passed|✔️|
 |ABBSort.c|-|-|-|❌|
 |ShellSort.c|-|-|-|❌|
 
@@ -43,10 +43,16 @@ tiempo.c and tiempo.h is the same for all codes.
 
 ## Comparative Table (step 3)
 TODO: Se necesitan los valores de tiempo real, tiempo CPU, E/S y CPU/Wall de cada algoritmo para hacer la tabla
-|Status|
-|---|
-|❌|
 
+With n = 500,000:
+|Algorithm|Real time|CPU time|I/O time|% CPU/Wall|
+|---|---|---|---|---|
+|ABB Sort|❌|❌|❌|❌|
+|Shell Sort|❌|❌|❌|❌|
+|Insertion Sort|7'16''|6'51''|3''|94.991 %|
+|Selection Sort|❌|❌|❌|❌|
+|Bubble Sort|❌|❌|❌|❌|
+|Optimized Bubble Sort|❌|❌|❌|❌|
 
 ## Generated graphics with all algorithms (steps 5, 8)
 
