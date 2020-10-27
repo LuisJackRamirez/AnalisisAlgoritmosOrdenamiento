@@ -1,8 +1,8 @@
 echo "testing ins sort..."
-#./ins 100 < nums.txt > ins-testing/ins-testing100.txt
-#echo "100 done..."
-#./ins 1000 < nums.txt > ins-testing/ins-testing1000.txt
-#echo "1000 done..."
+./ins 100 < nums.txt > ins-testing/ins-testing100.txt
+echo "100 done..."
+./ins 1000 < nums.txt > ins-testing/ins-testing1000.txt
+echo "1000 done..."
 ./ins 5000 < nums.txt > ins-testing/ins-testing5000.txt
 echo "5000 done..."
 ./ins 10000 < nums.txt > ins-testing/ins-testing10000.txt
