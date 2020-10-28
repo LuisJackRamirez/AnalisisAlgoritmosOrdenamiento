@@ -7,8 +7,10 @@ echo "1000 done..."
 echo "5000 done..."
 ./ins 10000 < nums.txt > ins-testing/ins-testing10000.txt
 echo "10000 done..."
-./ins 50000 < nums.txt > ins-testing/ins-testing50000.txt
-echo "50000 done..."
+./ins 500000 < nums.txt > ins-testing/ins-testing500000.txt
+echo "ins 500000 done..."
+./sel 500000 < nums.txt > sel-testing/sel-testing500000.txt
+echo "sel 500000 done"
 ./ins 100000 < nums.txt > ins-testing/ins-testing100000.txt
 echo "100000 done..."
 ./ins 200000 < nums.txt > ins-testing/ins-testing200000.txt
