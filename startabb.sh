@@ -1,4 +1,7 @@
-echo "testing abb sort..."
+echo "Compiling ABB Sort..."
+gcc ABBSort.c tiempo.c -o abb
+
+echo "Testing ABB Sort..."
 ./abb 100 < nums.txt
 ./abb 1000 < nums.txt
 ./abb 5000 < nums.txt
