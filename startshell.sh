@@ -1,3 +1,6 @@
+echo "Compiling Shell Sort..."
+gcc ShellSort.c tiempo.c -o shell
+
 echo "Testing Shell Sort..."
 ./shell 100 < nums.txt
 ./shell 1000 < nums.txt

@@ -21,10 +21,10 @@
 /*********************************************************/
 
 typedef struct node {
-    int value;
-    struct node* left;
-    struct node* right;
-    int height;
+    int value; // Valor del nodo.
+    struct node* left; // Apuntador a un hijo izquierdo.
+    struct node* right; // Apuntador a un hijo derecho.
+    int height; // Altura del nodo respecto al árbol.
 } node;
 
 /*********************************************************/
@@ -44,26 +44,33 @@ void inOrder(node* root);
         VARIABLES GLOBALES
 /*********************************************************/
 
-int sorted = 0;
-int* a;
+int sorted = 0; // Posición desde donde empezar a guardar los números ordenados.
+int* a; // Apuntador de tipo entero para recibir los números.
 
 /*********************************************************/
         FUNCIÓN PRINCIPAL DEL PROGRAMA
 /*********************************************************/
 
 int main(int argc, char *argv[]) {
+    // Si no se da un tamaño del problema al ejecutar, finaliza.
     if(argc != 2)
         return 0;
 
+    // Variables para medir el tiempo del algoritmo.
     double utime0, stime0, wtime0,utime1, stime1, wtime1;
 
+    // Se recibe la n (tamaño del problema).
     int n = atoi(argv[1]);
+    // Se le asigna memoria al apuntador "a", para n números.
     a = malloc(sizeof(int) * n);
 
-    int value, i;
+    // Variable iterativa.
+    int i;
+
+    // Inicialización del árbol.
     node* ABBSort = NULL;
 
-    // Incio del algoritmo, comenzamos a contar el tiempo
+    // Incio del algoritmo, comenzamos a contar el tiempo.
     uswtime(&utime0, &stime0, &wtime0);
 
     for(i = 0; i < n; ++i) {
