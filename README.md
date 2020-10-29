@@ -15,8 +15,8 @@ tiempo.c and tiempo.h is the same for all codes.
 |InsertionSort.c|✔️|
 |SelectionSort.c|✔️|
 |ShellSort.c|✔️|
-|BubbleSort.c|❌|
-|Optimized BubbleSort.c|❌|
+|BubbleSort.c|✔️|
+|Optimized BubbleSort.c|✔️|
 
 ## Tested over all n's 
 
@@ -26,8 +26,8 @@ tiempo.c and tiempo.h is the same for all codes.
 |ShellSort.c|startshell.sh|shell-testing/|all passed|✔️|
 |selectionSort.c|startsel.sh|sel-testing/|all passed|✔️|
 |insertionSort.c|startins.sh|ins-testing/|all passed|✔️|
-|ABBSort.c|-|-|-|❌|
-|ShellSort.c|-|-|-|❌|
+|main.c|myscript.sh|burbujaSimple|not all passed|✔️|
+|main.c|myscript.sh|burbujaOptimizada|not all passed|✔️|
 
 
 ## Generated graphics per algorithm
