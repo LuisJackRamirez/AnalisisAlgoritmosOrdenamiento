@@ -1,0 +1,12 @@
+
+real (Tiempo total)  0.0001521111 s
+user (Tiempo de procesamiento en CPU) 0.0001580000 s
+sys (Tiempo en acciónes de E/S)  0.0000000000 s
+CPU/Wall   103.8714783699 % 
+
+
+real (Tiempo total)  1.5211105347e-04 s
+user (Tiempo de procesamiento en CPU) 1.5800000000e-04 s
+sys (Tiempo en acciónes de E/S)  0.0000000000e+00 s
+CPU/Wall   103.8714783699 % 
+
