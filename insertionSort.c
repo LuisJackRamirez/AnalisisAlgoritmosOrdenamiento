@@ -20,6 +20,7 @@
 /*********************************************************/
 
 void Insercion (int *, int);
+void printArr (int *, int);
 
 /*********************************************************/
 /*        VARIABLES GLOBALES				 */
@@ -36,21 +37,36 @@ int A[10000007];
 int
 main (int argc, char **argv)
 {
+  //Variables para la medición del tiempo
   double utime0, stime0, wtime0, utime1, stime1, wtime1;
+
+  //Si no se proporcionan dos argumentos en la línea de comandos
+  //(el nombre del ejecutable y el argumento n), el programa termina
+  //la ejecución
+  if (argc != 2)
+    return 0;
 
   //Inicializamos n con el segundo elemento 
   //del argumento argv de la función main
   int n = atoi (argv[1]);
 
+  //Comienza la medición de los tiempos haciendo uso
+  //de la función proporcionada por "tiempo.h"
+  uswtime (&utime0, &stime0, &wtime0);
+  
+  //Lectura de los números
   for (int i = 0; i < n; i++)
     scanf ("%d", &A[i]);
 
-  //El algoritmo comienza a medir el tiempo del
-  //ordenamiento de números
-  uswtime (&utime0, &stime0, &wtime0);
+  //Llamada a la función Insercion () para ordenar el arreglo
   Insercion (A, n);
+
+  //Lamada a la función printArr () para imprimir el arreglo
+  printArr (A, n);
+
+  //En este punto se detiene la medición de tiempo del algoritmo
   uswtime (&utime1, &stime1, &wtime1);
-  
+
   //Cálculo de los tiempos de ejecución del programa
   printf ("Tiempo real: %.10f s\n", wtime1 - wtime0);
   printf ("user (Tiempo de procesamiento en CPU) %.10f s\n",  utime1 - utime0);
@@ -88,6 +104,20 @@ Insercion (int *A, int n)
 
       A[j] = temp;
     }
+
+  return;
+}
+
+//printArr (int *, int) -> void
+//Recibe el arreglo de enteros por ordenar, 
+//y un entero que representa su tamaño.
+//Ordena el algoritmo moviendo cada elemento en desorden hacia 
+//el inicio del arreglo hasta encontrar el lugar correcto.
+void
+printArr (int *A, int n)
+{
+  for (int i = 0; i < n; i++)
+    printf ("%d\n", A[i]);
 
   return;
 }

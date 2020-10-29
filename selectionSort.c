@@ -19,6 +19,7 @@
 /*********************************************************/
 
 void Seleccion (int *, int);
+void printArr (int *, int);
 
 /*********************************************************/
 /*	VARIABLES GLOBALES				 */
@@ -35,23 +36,35 @@ int A[10000007];
 int
 main (int argc, char **argv)
 {
+  //Variables para la medición del tiempo	
   double utime0, stime0, wtime0, utime1, stime1, wtime1;
+
+  //Si no se proporcionan dos argumentos en la línea de comandos
+  //(el nombre del ejecutable y el argumento n), el programa termina
+  //la ejecución
+  if (argc != 2)
+    return 0;
 
   //Inicializamos n con el segundo elemento
   //del argumento argv de la función main  
   int n = atoi (argv[1]);
 
+  //Comienza la medición de los tiempos haciendo uso
+  //de la función proporcionada por "tiempo.h"
+  uswtime (&utime0, &stime0, &wtime0);
+
+  //Lectura de los números
   for (int i = 0; i < n; i++)
     scanf ("%i", &A[i]);
 
-  //El algoritmo comienza a medir el tiempo del                                 
-  //ordenamiento de números  
-  uswtime (&utime0, &stime0, &wtime0);
+  //Lamada a la función Seleccion () para ordenar el arreglo
   Seleccion (A, n);
-  uswtime (&utime1, &stime1, &wtime1);
 
-  for (int i = 0; i < n; i++)
-    printf ("%d\n", A[i]);
+  //Llamada a la función para imprimir el arreglo
+  printArr (A, n);
+  
+  //En este punto se detiene la medición de tiempo del algoritmo
+  uswtime (&utime1, &stime1, &wtime1);
 
   //Cálculo de los tiempos de ejecución del programa     
   printf ("Tiempo real: %.10f s\n", wtime1 - wtime0);
@@ -90,6 +103,19 @@ Seleccion (int *A, int n)
       A[p] = A[k];
       A[k] = temp;
     }
+
+  return;
+}
+
+//printArr (int *, int) -> void
+//Recibe un arreglo de enteros a imprimir, 
+//y un entero que representa su tamaño
+//Itera por todo el contenido del arreglo e imprime cada elemento
+void
+printArr (int *A, int n)
+{
+  for (int i = 0; i < n; i++)
+    printf ("%d\n", A[i]);
 
   return;
 }
