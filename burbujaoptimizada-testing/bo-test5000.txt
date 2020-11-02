@@ -1,0 +1,6 @@
+
+Ingrese 5000 numeros enteros
+real (Tiempo total)  0.0433380604 s
+user (Tiempo de procesamiento en CPU) 0.0433400000 s
+sys (Tiempo en acciónes de E/S)  0.0000000000 s
+CPU/Wall   100.0044755602 % 

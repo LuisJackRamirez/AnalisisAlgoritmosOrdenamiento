@@ -70,11 +70,15 @@ int main(int argc, char *argv[]) {
     // Inicialización del árbol.
     node* ABBSort = NULL;
 
-    // Incio del algoritmo, comenzamos a contar el tiempo.
-    uswtime(&utime0, &stime0, &wtime0);
-
     for(i = 0; i < n; ++i) {
         scanf("%d", &a[i]);
+    }
+
+    // Incio del algoritmo, comenzamos a contar el tiempo.
+    uswtime(&utime0, &stime0, &wtime0);
+    
+
+    for(i = 0; i < n; ++i) {
         ABBSort = insert(ABBSort, a[i]);
     }
 
