@@ -1,0 +1,6 @@
+
+Ingrese 100000 numeros enteros
+real (Tiempo total)  16.6448547840 s
+user (Tiempo de procesamiento en CPU) 16.6439890000 s
+sys (Tiempo en acciónes de E/S)  0.0000000000 s
+CPU/Wall   99.9947984886 % 

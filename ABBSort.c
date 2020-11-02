@@ -7,18 +7,18 @@
     Autor: Luis Fernando Reséndiz Chávez
 */
 
-/*********************************************************/
+/*********************************************************
         BIBLIOTECAS UTILIZADAS
-/*********************************************************/
+*********************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "tiempo.h"
 
-/*********************************************************/
+/*********************************************************
         ESTRUCTURA DEL ÁRBOL BINARIO DE BÚSQUEDA
-/*********************************************************/
+*********************************************************/
 
 typedef struct node {
     int value; // Valor del nodo.
@@ -27,9 +27,9 @@ typedef struct node {
     int height; // Altura del nodo respecto al árbol.
 } node;
 
-/*********************************************************/
+/*********************************************************
         PROTOTIPOS DE FUNCIONES
-/*********************************************************/
+*********************************************************/
 
 int max(int a, int b);
 int height(node *root);
@@ -40,16 +40,16 @@ node* leftRotation(node* root);
 node* insert(node* root, int value);
 void inOrder(node* root);
 
-/*********************************************************/
+/*********************************************************
         VARIABLES GLOBALES
-/*********************************************************/
+*********************************************************/
 
 int sorted = 0; // Posición desde donde empezar a guardar los números ordenados.
 int* a; // Apuntador de tipo entero para recibir los números.
 
-/*********************************************************/
+/*********************************************************
         FUNCIÓN PRINCIPAL DEL PROGRAMA
-/*********************************************************/
+*********************************************************/
 
 int main(int argc, char *argv[]) {
     // Si no se da un tamaño del problema al ejecutar, finaliza.
@@ -70,11 +70,15 @@ int main(int argc, char *argv[]) {
     // Inicialización del árbol.
     node* ABBSort = NULL;
 
-    // Incio del algoritmo, comenzamos a contar el tiempo.
-    uswtime(&utime0, &stime0, &wtime0);
-
     for(i = 0; i < n; ++i) {
         scanf("%d", &a[i]);
+    }
+
+    // Incio del algoritmo, comenzamos a contar el tiempo.
+    uswtime(&utime0, &stime0, &wtime0);
+    
+
+    for(i = 0; i < n; ++i) {
         ABBSort = insert(ABBSort, a[i]);
     }
 
@@ -93,9 +97,9 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-/*********************************************************/
+/*********************************************************
         IMPLEMENTACIÓN DE FUNCIONES
-/*********************************************************/
+*********************************************************/
 
 // max(int, int) -> int
 // Recibe dos numeros enteros y devuelve el mayor de ellos.

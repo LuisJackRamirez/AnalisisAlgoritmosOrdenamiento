@@ -1,28 +1,29 @@
 /*
-	Titulo: Ordenamiento de selección
-	Descripción: Implementación del algoritmo de ordenamiento selección para ordenar n números.
-	Fecha: 27/10/2020
-	Version: 1.2
-	Autor: Luis Armando Ramírez Espinosa
+    Titulo: Ordenamiento de inserción
+    Descripción: Implementación del algoritmo de ordenamiento selección para ordenar n números.
+    Fecha: 27/10/2020
+    Version: 1.2
+    Autor: Luis Armando Ramírez Espinosa
 */
 
 /*********************************************************/
-/*	BIBLIOTECAS UTILIZADAS				 */
+/*        BIBLIOTECAS UTILIZADAS			 */
 /*********************************************************/
-#include <stdlib.h>
+
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "tiempo.h"
 
 /*********************************************************/
-/*	PROTOTIPOS DE FUNCIONES				 */
+/*        PROTOTIPOS DE FUNCIONES			 */
 /*********************************************************/
 
-void Seleccion (int *, int);
+void Insercion (int *, int);
 void printArr (int *, int);
 
 /*********************************************************/
-/*	VARIABLES GLOBALES				 */
+/*        VARIABLES GLOBALES				 */
 /*********************************************************/
 
 //Se optó por inicializar un arreglo del
@@ -30,13 +31,13 @@ void printArr (int *, int);
 int A[10000007];
 
 /*********************************************************/
-/*	FUNCIÓN PRINCIPAL DEL PROGRAMA		 	 */
-/*********************************************************/
+/*	FUNCIÓN PRINCIPAL DEL PROGRAMA			 */
+/*********************************************************/ 
 
 int
 main (int argc, char **argv)
 {
-  //Variables para la medición del tiempo	
+  //Variables para la medición del tiempo
   double utime0, stime0, wtime0, utime1, stime1, wtime1;
 
   //Si no se proporcionan dos argumentos en la línea de comandos
@@ -45,28 +46,25 @@ main (int argc, char **argv)
   if (argc != 2)
     return 0;
 
-  //Inicializamos n con el segundo elemento
-  //del argumento argv de la función main  
+  //Inicializamos n con el segundo elemento 
+  //del argumento argv de la función main
   int n = atoi (argv[1]);
+  
+  //Lectura de los números
+  for (int i = 0; i < n; i++)
+    scanf ("%d", &A[i]);
 
-  //Comienza la medición de los tiempos haciendo uso
+    //Comienza la medición de los tiempos haciendo uso
   //de la función proporcionada por "tiempo.h"
   uswtime (&utime0, &stime0, &wtime0);
 
-  //Lectura de los números
-  for (int i = 0; i < n; i++)
-    scanf ("%i", &A[i]);
+  //Llamada a la función Insercion () para ordenar el arreglo
+  Insercion (A, n);
 
-  //Lamada a la función Seleccion () para ordenar el arreglo
-  Seleccion (A, n);
-
-  //Llamada a la función para imprimir el arreglo
-  printArr (A, n);
-  
   //En este punto se detiene la medición de tiempo del algoritmo
   uswtime (&utime1, &stime1, &wtime1);
 
-  //Cálculo de los tiempos de ejecución del programa     
+  //Cálculo de los tiempos de ejecución del programa
   printf ("Tiempo real: %.10f s\n", wtime1 - wtime0);
   printf ("user (Tiempo de procesamiento en CPU) %.10f s\n",  utime1 - utime0);
   printf ("sys (Tiempo en acciónes de E/S)  %.10f s\n",  stime1 - stime0);
@@ -74,43 +72,44 @@ main (int argc, char **argv)
 
   return 0;
 }
+
 /*********************************************************/
-/*	IMPLEMENTACIÓN DE FUNCIONES                      */
-/*********************************************************/ 
-//Seleccion (int *, int) -> void
-//Recibe el arreglo de enteros por ordenar,
+/*	IMPLEMENTACIÓN DE FUNCIONES			 */
+/*********************************************************/
+
+//Insercion (int *, int) -> void
+//Recibe el arreglo de enteros por ordenar, 
 //y un entero que representa su tamaño.
-//Ordena el algoritmo intercambiando las posiciones del i-ésimo
-//número de la lista con el i-ésimo número más pequeño en el arreglo,
-//i indexado en 1.
+//Ordena el algoritmo moviendo cada elemento en desorden hacia 
+//el inicio del arreglo hasta encontrar el lugar correcto.
 void
-Seleccion (int *A, int n)
+Insercion (int *A, int n)
 {
-  int k = 0;
-  int p = 0;
+  int j = 0;
   int temp = 0;
 
-  for (k = 0; k < n - 1; k++)
+  for (int i = 0; i < n; i++)
     {
-      p = k;
-      for (int i = k + 1; i < n; i++)
+      j = i;
+      temp = A[i];
+
+      while (j > 0 && temp < A[j - 1])
         {
-	  if (A[i] < A[p])
-	    p = i;
+	  A[j] = A[j-1];
+	  j--;
 	}
 
-      temp = A[p];
-      A[p] = A[k];
-      A[k] = temp;
+      A[j] = temp;
     }
 
   return;
 }
 
 //printArr (int *, int) -> void
-//Recibe un arreglo de enteros a imprimir, 
-//y un entero que representa su tamaño
-//Itera por todo el contenido del arreglo e imprime cada elemento
+//Recibe el arreglo de enteros por ordenar, 
+//y un entero que representa su tamaño.
+//Ordena el algoritmo moviendo cada elemento en desorden hacia 
+//el inicio del arreglo hasta encontrar el lugar correcto.
 void
 printArr (int *A, int n)
 {
